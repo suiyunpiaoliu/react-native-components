@@ -7,6 +7,6 @@ react native 组件库
 - cd .. && react-native run-ios
 
 当前已完成组件
-- Pickers 类iOS Picker
+- Pickers 类 iOS Picker
 - DatePicker
-- ActionSheet 类iOS ActionSheet
+- ActionSheet 类 iOS ActionSheet
