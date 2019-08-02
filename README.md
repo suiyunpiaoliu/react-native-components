@@ -10,3 +10,4 @@ react native 组件库
 - Pickers 类 iOS UIPickerView
 - DatePicker
 - ActionSheet 类 iOS ActionSheet
+- FilePicker 支持相册和文件夹，引用了react-native-image-picker 和 com.nbsp:library:1.8
