@@ -188,8 +188,15 @@ android {
 }
 
 dependencies {
+    compile 'com.nbsp:library:1.8'
+    implementation project(':react-native-image-picker')
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
+    implementation 'com.android.support:design:27.1.1'
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
 
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";

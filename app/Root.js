@@ -12,7 +12,12 @@ import {
 	TouchableOpacity,
 	ScrollView
 } from 'react-native';
-import {DatePicker,ActionSheet,Pickers} from './component'
+import {
+	DatePicker,
+	ActionSheet,
+	Pickers,
+	FilePicker,
+} from './component'
 import BaseComponent from './component/BaseComponent'
 export default class Root extends BaseComponent {
 	ClassName = 'Root'
@@ -53,6 +58,11 @@ export default class Root extends BaseComponent {
 	showActionSheet(){
 		this.refs.actionSheet.show()
 	}
+	showFilePicker(){
+		this.refs.filePicker.show((response)=>{
+			console.log(response)
+		})
+	}
 	render() {
 		return (
 			<View style={styles.container}>
@@ -60,6 +70,7 @@ export default class Root extends BaseComponent {
 				<TouchableOpacity style={styles.button} onPress={()=>this.showPicker()}><Text>显示Picker</Text></TouchableOpacity>
 					<TouchableOpacity style={styles.button} onPress={()=>this.showDatePicker()}><Text>显示DatePicker</Text></TouchableOpacity>
 					<TouchableOpacity style={styles.button} onPress={()=>this.showActionSheet()}><Text>显示ActionSheet</Text></TouchableOpacity>
+					<TouchableOpacity style={styles.button} onPress={()=>this.showFilePicker()}><Text>显示FilePicker</Text></TouchableOpacity>
 					<Pickers
 						ref='picker'
 						title='请选择'
@@ -84,6 +95,7 @@ export default class Root extends BaseComponent {
 						<ActionSheet.Item onPress={()=>console.log('ceshi2')} title={'测试2'}/>
 						<ActionSheet.Item onPress={()=>console.log('ceshi3')} title={'测试2'}/>
 					</ActionSheet>
+					<FilePicker accept={['pdf','image','doc']} ref='filePicker'/>
 				</ScrollView>
 			</View>
 			

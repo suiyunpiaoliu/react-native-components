@@ -12,6 +12,9 @@ const generator =(ruleFunc,num) => {
 
 const deviceW = Dimensions.get('window').width
 const basePx = 375
+const os = Platform.OS
+const android = os == 'android'
+const ios = os == 'ios'
 
 const px2dp = (px) => {
     return px * deviceW / basePx
@@ -22,6 +25,8 @@ export {
 	px2dp,
 	fontSize,
 	colors,
+	android,
+	ios
 	
 
 }
