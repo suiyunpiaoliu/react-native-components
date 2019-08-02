@@ -2,4 +2,6 @@
 react native 组件库
 
 初始允许，请执行命令
-cd ./ios && pod install
+- npm install
+- cd ./ios && pod install
+- cd .. && react-native run-ios
