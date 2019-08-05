@@ -10,13 +10,14 @@ import {
 	Text,
 	View,
 	TouchableOpacity,
-	ScrollView
+	ScrollView,
 } from 'react-native';
 import {
 	DatePicker,
 	ActionSheet,
 	Pickers,
 	FilePicker,
+	TextInput,
 } from './component'
 import BaseComponent from './component/BaseComponent'
 export default class Root extends BaseComponent {
@@ -27,6 +28,8 @@ export default class Root extends BaseComponent {
 			format:'YYYY-MM',
 			dateSelect:'2019-07',
 			pickerSelect:[],
+			text:'',
+			validate:true,
 		};
 	}
 	componentDidMount(){
@@ -71,6 +74,16 @@ export default class Root extends BaseComponent {
 					<TouchableOpacity style={styles.button} onPress={()=>this.showDatePicker()}><Text>显示DatePicker</Text></TouchableOpacity>
 					<TouchableOpacity style={styles.button} onPress={()=>this.showActionSheet()}><Text>显示ActionSheet</Text></TouchableOpacity>
 					<TouchableOpacity style={styles.button} onPress={()=>this.showFilePicker()}><Text>显示FilePicker</Text></TouchableOpacity>
+					<TextInput 
+						style={{height:35,width:300,marginTop:4,alignSelf:'center',fontSize: 16,borderWidth:1,borderColor:'#f0f0f0'}}
+						value={this.state.text}
+						placeholder={'请填写'}
+						onChangeText={(text,validate)=>this.setState({text,validate})}
+						rules={[{pattern:/^\d+$/,trigger:'change',message:'格式错误'}]}
+						prefix={<View style={{backgroundColor:'#fff',height:'100%'}}><Text style={{lineHeight:30,paddingHorizontal:5,fontSize:16}}>￥</Text></View>}
+						suffix={<View style={{backgroundColor:'#f0f0f0',height:'100%'}}><Text style={{lineHeight:35,paddingHorizontal:10,}}>@</Text></View>}
+					/>
+					
 					<Pickers
 						ref='picker'
 						title='请选择'
