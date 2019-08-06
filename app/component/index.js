@@ -3,6 +3,7 @@ import DatePicker from './DatePicker'
 import ActionSheet from './ActionSheet'
 import FilePicker from './FilePicker'
 import TextInput from './TextInput';
+import KeyboardAvoidingView from './KeyboardAvoidingView';
 
 
 export {
@@ -11,4 +12,5 @@ export {
 	ActionSheet,
 	FilePicker,
 	TextInput,
+	KeyboardAvoidingView,
 }

@@ -11,10 +11,14 @@ const generator =(ruleFunc,num) => {
 }
 
 const deviceW = Dimensions.get('window').width
+const deviceH = Dimensions.get('window').width
 const basePx = 375
 const os = Platform.OS
 const android = os == 'android'
 const ios = os == 'ios'
+
+const X_HEIGHT = 812
+const hasNotch = os == 'ios' && deviceH >= X_HEIGHT
 
 const px2dp = (px) => {
     return px * deviceW / basePx
@@ -67,10 +71,13 @@ const unNullStyle = (...styles) => {
 export {
 	generator,
 	px2dp,
+	deviceH,
+	deviceW,
 	fontSize,
 	colors,
 	android,
 	ios,
+	hasNotch,
 	layoutStyle,
 	borderStyle,
 	shadowStyle,
