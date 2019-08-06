@@ -12,3 +12,4 @@ react native 组件库
 - ActionSheet 类 iOS ActionSheet
 - FilePicker 支持相册和文件夹，引用了react-native-image-picker 和 com.nbsp:library:1.8
 - TextInput 扩展了prefix，suffix，rule
+- KeyboardAvoidingView 对RN的KeyboardAvoidingView进行了调整
