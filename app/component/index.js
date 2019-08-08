@@ -4,6 +4,7 @@ import ActionSheet from './ActionSheet'
 import FilePicker from './FilePicker'
 import TextInput from './TextInput';
 import KeyboardAvoidingView from './KeyboardAvoidingView';
+import Button from './Button';
 
 
 export {
@@ -13,4 +14,5 @@ export {
 	FilePicker,
 	TextInput,
 	KeyboardAvoidingView,
+	Button,
 }

@@ -17,7 +17,7 @@ import {} from './app/category'
 const App = () => {
   return (
     <Fragment>
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
       <Root/>
       </SafeAreaView>
     </Fragment>
@@ -25,6 +25,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor: '#f0f0f0',
+  }
   
 });
 

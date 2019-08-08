@@ -15,7 +15,7 @@ import {
 	Animated,
 	Easing
 } from 'react-native';
-
+import PropTypes from 'prop-types'
 export default class Pickers extends Component {
     constructor(props) {
         super(props);
@@ -24,6 +24,20 @@ export default class Pickers extends Component {
 					show:false,
 					positionAni:new Animated.Value(-240),
 				};
+		}
+		static propTypes = {
+			selected:PropTypes.array,
+			onConfirm:PropTypes.func,
+			numColumns: PropTypes.number,
+			options:PropTypes.array,
+			onValueChange:PropTypes.func,
+			labelName : PropTypes.string,
+			valueName : PropTypes.string,
+		}
+		static defaultProps = {
+			numColumns: 1,
+			labelName : 'label',
+			valueName : 'value'
 		}
 		onCancel(){
 			this.dismiss()

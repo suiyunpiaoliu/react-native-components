@@ -55,6 +55,11 @@ const textStyle = (...styles)=>{
 	let newStyle = filterStyle(styles, keys)
 	return newStyle
 }
+const flexStyle = (...styles)=>{
+	const keys = ['alignContent','alignItems','alignSelf','flex','flexBasis','flexDirection','flexGrow','flexShrink','flexWrap','justifyContent',]
+	let newStyle = filterStyle(styles, keys)
+	return newStyle
+}
 const unNullStyle = (...styles) => {
 	let style = Object.assign({},...styles)
 	let newStyle = {}
@@ -83,4 +88,5 @@ export {
 	shadowStyle,
 	textStyle,
 	unNullStyle,
+	flexStyle,
 }

@@ -18,6 +18,7 @@ import {
 	Pickers,
 	FilePicker,
 	TextInput,
+	Button,
 } from './component'
 import BaseComponent from './component/BaseComponent'
 export default class Root extends BaseComponent {
@@ -70,17 +71,32 @@ export default class Root extends BaseComponent {
 		return (
 			<View style={styles.container}>
 				<ScrollView>
-				<TouchableOpacity style={styles.button} onPress={()=>this.showPicker()}><Text>显示Picker</Text></TouchableOpacity>
-					<TouchableOpacity style={styles.button} onPress={()=>this.showDatePicker()}><Text>显示DatePicker</Text></TouchableOpacity>
-					<TouchableOpacity style={styles.button} onPress={()=>this.showActionSheet()}><Text>显示ActionSheet</Text></TouchableOpacity>
-					<TouchableOpacity style={styles.button} onPress={()=>this.showFilePicker()}><Text>显示FilePicker</Text></TouchableOpacity>
+				<Button 
+					style={styles.button} 
+					onPress={()=>this.showPicker()} 
+					title={'显示Picker'}
+					backgroundImage={require(`./assets/bgc.jpg`)}
+				/>
+					<Button 
+					icon='ios-battery-charging' 
+					style={styles.button} 
+					onPress={()=>this.showDatePicker()} 
+					title={'显示DatePicker'}
+					backgroundImage={require(`./assets/bgc.jpg`)}
+					/>
+					<Button style={styles.button} onPress={()=>this.showActionSheet()} />
+					<Button style={styles.button} onPress={()=>this.showFilePicker()} title={'显示FilePicker'}/>
+					<Button style={styles.button} onPress={()=>this.showFilePicker()}>
+						<Text>显示文件夹</Text>
+						<Text>显示文件夹</Text>
+					</Button>
 					<TextInput 
 						style={{height:35,width:300,marginTop:4,alignSelf:'center',fontSize: 16,borderWidth:1,borderColor:'#f0f0f0'}}
 						value={this.state.text}
 						placeholder={'请填写'}
 						onChangeText={(text,validate)=>this.setState({text,validate})}
 						rules={[{pattern:/^\d+$/,trigger:'change',message:'格式错误'}]}
-						prefix={<View style={{backgroundColor:'#fff',height:'100%'}}><Text style={{lineHeight:30,paddingHorizontal:5,fontSize:16}}>￥</Text></View>}
+						prefix={<View style={{backgroundColor:'#f0f0f0',height:'100%'}}><Text style={{lineHeight:30,paddingHorizontal:5,fontSize:16}}>￥</Text></View>}
 						suffix={<View style={{backgroundColor:'#f0f0f0',height:'100%'}}><Text style={{lineHeight:35,paddingHorizontal:10,}}>@</Text></View>}
 					/>
 					
@@ -118,6 +134,8 @@ export default class Root extends BaseComponent {
 
 const styles = StyleSheet.create({
 	container:{
+		backgroundColor:'white',
+		flex:1,
 	},
 	button: {
 		height:50,
@@ -128,5 +146,7 @@ const styles = StyleSheet.create({
 		marginTop:10,
 		justifyContent:'center',
 		flexDirection:'row',
+		fontSize:20,
+		color:'red',
 	}
 });

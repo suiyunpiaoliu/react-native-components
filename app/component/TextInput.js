@@ -12,7 +12,7 @@ import {
   View,
 } from 'react-native';
 import { layoutStyle, textStyle, borderStyle } from '../tools';
-import { hidden } from 'ansi-colors';
+import PropTypes from 'prop-types'
 
 
 export default class RNTextInput extends Component {
@@ -22,6 +22,16 @@ export default class RNTextInput extends Component {
 					error:false,
 					message:null,
 				};
+		}
+		static propTypes = {
+			style:PropTypes.object,
+			placeholder:PropTypes.string,
+			value:PropTypes.string,
+			prefix:PropTypes.element,
+			suffix:PropTypes.element,
+			onBlur:PropTypes.func,
+			rules:PropTypes.array,
+			onChangeText:PropTypes.func,
 		}
 		onBlur(){
 			let {onBlur,rules=[],value} = this.props
@@ -80,6 +90,7 @@ const styles = StyleSheet.create({
 		borderColor:'#f0f0f0',
 		borderWidth:1,
 		borderRadius:4,
+		backgroundColor:'white',
 		alignItems:'center',
 		overflow:'hidden',
 	},

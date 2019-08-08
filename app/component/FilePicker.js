@@ -15,6 +15,7 @@ import {
 import { px2dp, fontSize, colors,android } from '../tools';
 import ActionSheet from './ActionSheet'
 import ImagePicker from 'react-native-image-picker';
+import PropTypes from 'prop-types'
 const FileTypes = Platform.select({
 	ios:{
 		txt:['public.text','public.plain-text','public.utf8-plain-text','public.utf16-external-plain-​text','public.utf16-plain-text','com.apple.traditional-mac-​plain-text',],
@@ -68,6 +69,9 @@ export default class FilePicker extends Component {
 			modalVisible: false,
 			positionAni: new Animated.Value(-240),
 		};
+	}
+	static propTypes = {
+		accept:PropTypes.array
 	}
 	onCancel() {
 		this.dismiss()

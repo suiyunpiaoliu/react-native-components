@@ -11,6 +11,7 @@ import {
 	View,
 } from 'react-native';
 import Pickers from './Pickers'
+import PropTypes from 'prop-types'
 import { generator } from '../tools'
 export default class DatePicker extends Component {
 	constructor(props) {
@@ -33,6 +34,12 @@ export default class DatePicker extends Component {
 		}
 
 	}
+	static propTypes = {
+		format:PropTypes.string,
+		onConfirm:PropTypes.func,
+		title:PropTypes.string,
+	}	
+
 	initData(props,callback) {
 		let date = new Date
 		let numColumns = 6

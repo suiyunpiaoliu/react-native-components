@@ -15,7 +15,7 @@ import {
 	Easing,
 } from 'react-native';
 import { px2dp, fontSize, colors } from '../tools';
-
+import PropTypes from 'prop-types'
 const TITLE_HEIGHT = px2dp(40)
 const BUTTON_HEIGHT = px2dp(56)
 const BOTTOM_HEIGHT = px2dp(30)
@@ -43,6 +43,9 @@ export default class ActionSheet extends Component {
 			positionAni: new Animated.Value(-240),
 			height:240,
 		};
+	}
+	static propTypes = {
+		title:PropTypes.string,
 	}
 	onCancel() {
 		this.dismiss()
